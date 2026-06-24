@@ -1,0 +1,22 @@
+---
+layout: default
+title: Writing
+permalink: /blog/
+---
+<section style="padding-top:clamp(40px,6vw,72px);">
+  <div class="wrap">
+    <p class="eyebrow">Writing</p>
+    <h1 class="sec-head">Notes.</h1>
+    <p class="intro">Short pieces where I try to explain the ideas in my research in plain language.</p>
+
+    <div class="post-list">
+      {% for post in site.posts %}
+      <a class="post-row" href="{{ post.url | relative_url }}">
+        <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <span class="ptitle">{{ post.title }}</span>
+        {% if post.description %}<span class="excerpt">{{ post.description }}</span>{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
