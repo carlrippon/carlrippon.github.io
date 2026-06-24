@@ -1,4 +1,4 @@
- ---
+---
 layout: post
 title: "A first note"
 date: 2026-06-24
