@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carl Rippon — Economist</title>
+<meta name="description" content="Carl Rippon, PhD candidate in economics at the University of the Antilles (CREDDI). The economics of disasters in small, open island economies of the Caribbean.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#102A30;
+    --ink-2:#33514F;
+    --salt:#EBEFEE;
+    --paper:#FBFCFB;
+    --line:#D2DAD8;
+    --sea:#2E7D86;
+    --coral:#D2563A;
+    --mute:#6C7E7C;
+    --display:'Fraunces',Georgia,'Times New Roman',serif;
+    --body:'Inter',system-ui,-apple-system,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--salt);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  /* ---------- mono eyebrow ---------- */
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--mute);
+    margin:0 0 1.1rem;
+    display:flex;align-items:center;gap:.7rem;
+  }
+  .eyebrow::before{
+    content:"";width:26px;height:1px;background:var(--coral);display:inline-block;
+  }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:40;
+    background:color-mix(in srgb,var(--salt) 88%,transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:14px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{font-family:var(--display);font-weight:600;font-size:1.15rem;letter-spacing:-.01em;text-decoration:none;}
+  .brand span{color:var(--coral);}
+  .nav-links{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0;}
+  .nav-links a{
+    text-decoration:none;font-size:.82rem;font-family:var(--mono);
+    letter-spacing:.04em;color:var(--ink-2);padding:4px 0;position:relative;
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;
+    background:var(--coral);transition:width .25s ease;
+  }
+  .nav-links a:hover::after,.nav-links a:focus-visible::after{width:100%;}
+  .nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:6px;
+    padding:7px 10px;font-family:var(--mono);font-size:.75rem;color:var(--ink);cursor:pointer;}
+
+  /* ---------- hero ---------- */
+  .hero{padding:clamp(48px,9vw,108px) 0 clamp(40px,6vw,72px);}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;}
+  .hero h1{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(2.7rem,6.4vw,5rem);
+    line-height:1.02;
+    letter-spacing:-.025em;
+    margin:.2rem 0 1.4rem;
+  }
+  .hero h1 em{font-style:italic;color:var(--coral);}
+  .lede{font-size:clamp(1.05rem,1.7vw,1.3rem);color:var(--ink-2);max-width:30ch;margin:0 0 2rem;}
+  .status{font-family:var(--mono);font-size:.78rem;color:var(--mute);letter-spacing:.03em;
+    border-top:1px solid var(--line);padding-top:1rem;max-width:34ch;}
+
+  /* impulse-response signature */
+  .irf{width:100%;height:auto;}
+  .irf .axis{stroke:var(--line);stroke-width:1;}
+  .irf .base{stroke:var(--ink-2);stroke-width:1;stroke-dasharray:3 4;opacity:.55;}
+  .irf .impact-line{stroke:var(--mute);stroke-width:1;stroke-dasharray:2 4;opacity:.6;}
+  .irf .curve{fill:none;stroke:var(--coral);stroke-width:2.4;stroke-linecap:round;}
+  .irf .dot{fill:var(--coral);}
+  .irf .ring{fill:none;stroke:var(--coral);stroke-width:1.4;opacity:.45;}
+  .irf text{font-family:var(--mono);font-size:11px;fill:var(--mute);letter-spacing:.02em;}
+  .irf .caption{fill:var(--ink-2);}
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(56px,8vw,96px) 0;border-top:1px solid var(--line);}
+  .sec-head{font-family:var(--display);font-weight:500;font-size:clamp(1.5rem,2.6vw,2.1rem);
+    letter-spacing:-.015em;margin:.2rem 0 1.8rem;}
+  .about-body{max-width:62ch;}
+  .about-body p{margin:0 0 1.15rem;font-size:1.12rem;}
+  .about-body p:last-child{margin-bottom:0;}
+  .about-body strong{font-weight:600;}
+
+  /* research */
+  .papers{display:flex;flex-direction:column;gap:0;}
+  .paper{display:grid;grid-template-columns:128px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line);}
+  .paper:first-child{border-top:none;}
+  .paper .meta{font-family:var(--mono);font-size:.74rem;color:var(--mute);line-height:1.5;letter-spacing:.02em;}
+  .paper .tag{display:inline-block;margin-top:8px;padding:2px 8px;border:1px solid var(--line);border-radius:999px;
+    font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);}
+  .paper .tag.live{border-color:var(--coral);color:var(--coral);}
+  .paper h3{font-family:var(--display);font-weight:500;font-size:1.28rem;line-height:1.25;margin:0 0 .5rem;letter-spacing:-.01em;}
+  .paper p{margin:0 0 .8rem;color:var(--ink-2);font-size:1.02rem;}
+  .paper .links{display:flex;gap:1.1rem;flex-wrap:wrap;}
+  .paper .links a{font-family:var(--mono);font-size:.76rem;text-decoration:none;color:var(--sea);
+    border-bottom:1px solid transparent;transition:border-color .2s;}
+  .paper .links a:hover,.paper .links a:focus-visible{border-color:var(--sea);}
+  .paper .links a[aria-disabled="true"]{color:var(--mute);pointer-events:none;}
+
+  /* cv band */
+  .cv-band{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:30px 34px;}
+  .cv-band .t{font-family:var(--display);font-size:1.35rem;font-weight:500;margin:0 0 .35rem;}
+  .cv-band .s{color:var(--ink-2);margin:0;font-size:1rem;}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--mono);font-size:.82rem;
+    letter-spacing:.03em;text-decoration:none;background:var(--ink);color:var(--paper);
+    padding:13px 22px;border-radius:9px;transition:transform .15s ease,background .2s;}
+  .btn:hover,.btn:focus-visible{background:var(--coral);transform:translateY(-2px);}
+  .btn span{font-size:1rem;}
+
+  /* writing */
+  .note{display:grid;grid-template-columns:128px 1fr;gap:28px;padding:22px 0;border-top:1px solid var(--line);}
+  .note:first-of-type{border-top:none;}
+  .note .date{font-family:var(--mono);font-size:.74rem;color:var(--mute);}
+  .note h3{font-family:var(--display);font-weight:500;font-size:1.14rem;margin:0 0 .35rem;}
+  .note p{margin:0;color:var(--ink-2);font-size:1rem;}
+  .note .draft{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--coral);border:1px solid var(--coral);border-radius:999px;padding:1px 7px;margin-left:8px;vertical-align:middle;}
+  .writing-note{font-size:.95rem;color:var(--mute);margin:0 0 2rem;max-width:60ch;}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .contact-grid p{margin:0 0 .5rem;}
+  .contact-grid .label{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:0 0 .6rem;}
+  .contact-grid a{color:var(--sea);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s;}
+  .contact-grid a:hover,.contact-grid a:focus-visible{border-color:var(--sea);}
+  .biglink{font-family:var(--display);font-size:1.4rem;font-weight:500;}
+
+  footer{border-top:1px solid var(--line);padding:30px 0;}
+  .foot-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-family:var(--mono);font-size:.72rem;color:var(--mute);letter-spacing:.03em;}
+
+  :focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:3px;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:820px){
+    .hero-grid{grid-template-columns:1fr;gap:30px;}
+    .hero-art{order:-1;max-width:460px;}
+    .nav-links{position:absolute;top:100%;right:0;left:0;flex-direction:column;gap:0;
+      background:var(--paper);border-bottom:1px solid var(--line);padding:8px 28px 16px;display:none;}
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:11px 0;border-top:1px solid var(--line);}
+    .nav-toggle{display:inline-block;}
+    .paper,.note{grid-template-columns:1fr;gap:8px;}
+    .contact-grid{grid-template-columns:1fr;gap:28px;}
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .irf .curve{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);
+      animation:draw 1.7s .25s cubic-bezier(.6,.05,.2,1) forwards;}
+    .irf .reveal{opacity:0;animation:fade .6s 1.5s ease forwards;}
+    @keyframes draw{to{stroke-dashoffset:0;}}
+    @keyframes fade{to{opacity:1;}}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Carl <span>Rippon</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="border-top:none;">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Economics of disasters</p>
+        <h1>Reading the shock, and the <em>recovery</em>.</h1>
+        <p class="lede">I study how disasters move through small, open island economies in the Caribbean, and what helps them recover.</p>
+        <p class="status">PhD candidate · University of the Antilles, CREDDI · defending 2026</p>
+      </div>
+      <div class="hero-art">
+        <svg class="irf" viewBox="0 0 600 320" role="img" aria-label="An impulse response curve: output drops sharply on impact, then recovers slowly toward, but not fully back to, its baseline.">
+          <!-- axes -->
+          <line class="axis" x1="48" y1="40" x2="48" y2="278"/>
+          <line class="axis" x1="48" y1="278" x2="566" y2="278"/>
+          <!-- baseline -->
+          <line class="base" x1="48" y1="150" x2="566" y2="150"/>
+          <!-- impact marker -->
+          <line class="impact-line" x1="178" y1="60" x2="178" y2="278"/>
+          <!-- the impulse response curve -->
+          <path class="curve" d="M48,150 L178,150 C193,150 203,236 230,238 C300,243 372,170 450,160 C500,153 540,160 566,162"/>
+          <!-- impact dot -->
+          <circle class="ring reveal" cx="178" cy="150" r="9"/>
+          <circle class="dot reveal" cx="178" cy="150" r="3.6"/>
+          <!-- labels -->
+          <text class="reveal" x="178" y="52" text-anchor="middle">shock</text>
+          <text class="reveal caption" x="58" y="36">output</text>
+          <text class="reveal" x="566" y="298" text-anchor="end">time →</text>
+          <text class="reveal" x="455" y="142">persistent gap</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <h2 class="sec-head">A simple question, asked of islands.</h2>
+      <div class="about-body">
+        <p>I'm a PhD candidate in economics at the <strong>University of the Antilles</strong>, in the CREDDI research center. My work is on the economics of disasters in small, open, climate-exposed island economies, with a focus on the Caribbean.</p>
+        <p>It starts from a question that sounds simple and turns out not to be: why do similar shocks send comparable economies onto such different paths? To answer it, I combine structural macroeconomic modeling with applied empirical work, using DSGE models, local projections, and climate and satellite data.</p>
+        <p>I also care about what the results mean in practice: where reconstruction effort pays off, how price-regulation schemes are designed, and how islands can share the risk of shocks that, in a single event, can exceed a full year of output.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="wrap">
+      <p class="eyebrow">Research</p>
+      <h2 class="sec-head">Papers and work in progress.</h2>
+      <div class="papers">
+
+        <article class="paper">
+          <div class="meta">
+            with P. Borda<br>2026
+            <span class="tag live">Forthcoming · RERU</span>
+          </div>
+          <div>
+            <h3>Inflation Tales from the French Overseas Departments</h3>
+            <p>How cyclones, global supply disruptions and local taxes pass through to consumer prices in Guadeloupe, Martinique and Réunion. Includes the first quantitative evaluation of the Bouclier Qualité Prix.</p>
+            <div class="links">
+              <a href="#" aria-disabled="true">PDF (soon)</a>
+              <a href="#" aria-disabled="true">Journal (soon)</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="paper">
+          <div class="meta">
+            CREDDI<br>Working paper
+            <span class="tag">DSGE</span>
+          </div>
+          <div>
+            <h3>One Mechanism, Three Islands: How Hurricanes Transmit Through Caribbean Small Open Economies</h3>
+            <p>A two-sector DSGE model of Jamaica, Dominica and the Bahamas. Across very different islands, hurricanes transmit through the same hierarchy of channels, and output falls more from the lost efficiency of surviving capital than from physical destruction.</p>
+            <div class="links">
+              <a href="#" aria-disabled="true">Working paper (soon)</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="paper">
+          <div class="meta">
+            Review<br>In progress
+            <span class="tag">WIP</span>
+          </div>
+          <div>
+            <h3>Beyond the Shock: What Follows When Disaster Strikes?</h3>
+            <p>An integrative review of how disasters reshape households, sectors and states, mapping a fragmented literature into a single framework and setting out six research priorities.</p>
+            <div class="links">
+              <a href="#" aria-disabled="true">Draft on request</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <div class="wrap">
+      <p class="eyebrow">Curriculum vitae</p>
+      <div class="cv-band">
+        <div>
+          <p class="t">The full record</p>
+          <p class="s">Education, publications, conferences, and academic service.</p>
+        </div>
+        <a class="btn" href="#" download><span>↓</span> Download CV (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section id="writing">
+    <div class="wrap">
+      <p class="eyebrow">Writing</p>
+      <h2 class="sec-head">Notes.</h2>
+      <p class="writing-note">Short pieces where I try to explain the ideas in my research in plain language. The two below are placeholders to replace with your first posts.</p>
+
+      <article class="note">
+        <div class="date">Draft</div>
+        <div>
+          <h3>A hurricane is not just a hit to the capital stock<span class="draft">placeholder</span></h3>
+          <p>Why the capital that survives a storm matters more than the capital it destroys.</p>
+        </div>
+      </article>
+
+      <article class="note">
+        <div class="date">Draft</div>
+        <div>
+          <h3>How to read an impulse response function<span class="draft">placeholder</span></h3>
+          <p>The single chart behind most of what I do, explained without the jargon.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <div class="contact-grid">
+        <div>
+          <p class="label">Email</p>
+          <p class="biglink"><a href="mailto:carl.rippon@etu.univ-antilles.fr">carl.rippon@etu.univ-antilles.fr</a></p>
+          <p class="label" style="margin-top:1.8rem;">Affiliation</p>
+          <p>CREDDI, University of the Antilles<br>Pointe-à-Pitre, Guadeloupe</p>
+        </div>
+        <div>
+          <p class="label">Elsewhere</p>
+          <p><a href="https://www.linkedin.com/in/carl-rippon/">LinkedIn</a></p>
+          <p><a href="#" aria-disabled="true">Google Scholar (soon)</a></p>
+          <p><a href="https://github.com/carlrippon">GitHub</a></p>
+          <p><a href="https://www.creddi.fr/" >CREDDI</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>© <span id="yr"></span> Carl Rippon</span>
+    <span>Pointe-à-Pitre · Guadeloupe</span>
+  </div>
+</footer>
+
+<script>
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // mobile nav
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.getElementById('nav-links');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
+  });
+
+  // impulse-response draw: set dash length from the path
+  var curve = document.querySelector('.irf .curve');
+  if(curve && curve.getTotalLength){
+    var len = Math.ceil(curve.getTotalLength());
+    curve.style.setProperty('--len', len);
+  }
+</script>
+</body>
+</html>
