@@ -1,14 +1,49 @@
 ---
 layout: default
 ---
+{% assign mois = "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre" | split: "," %}
+{% assign full_url = page.url | absolute_url %}
 <article class="post">
   <div class="wrap">
-    <a class="backlink" href="/blog/">← All notes</a>
-    <p class="post-date">{{ page.date | date: "%B %-d, %Y" }}</p>
+    <div class="post-top">
+      <a class="backlink" href="/blog/">← {% if page.lang == 'fr' %}Toutes les notes{% else %}All notes{% endif %}</a>
+      {% if page.translation %}<a class="lang-toggle" href="{{ page.translation }}">{% if page.lang == 'fr' %}Read in English →{% else %}Lire en français →{% endif %}</a>{% endif %}
+    </div>
+    <p class="post-date">{% if page.lang == 'fr' %}{% assign mnum = page.date | date: "%-m" | minus: 1 %}{{ page.date | date: "%-d" }} {{ mois[mnum] }} {{ page.date | date: "%Y" }}{% else %}{{ page.date | date: "%B %-d, %Y" }}{% endif %}{% if page.lang %} · <span class="lang-pill">{{ page.lang | upcase }}</span>{% endif %}</p>
     <h1 class="post-title">{{ page.title }}</h1>
     <div class="post-body">
       {{ content }}
     </div>
-    <a class="backlink" href="/blog/">← All notes</a>
+
+    <div class="share">
+      <span class="share-label">{% if page.lang == 'fr' %}Partager{% else %}Share{% endif %}</span>
+      <button class="share-btn copy-link" type="button" data-url="{{ full_url }}" data-done="{% if page.lang == 'fr' %}Lien copié{% else %}Link copied{% endif %}">{% if page.lang == 'fr' %}Copier le lien{% else %}Copy link{% endif %}</button>
+      <a class="share-btn" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url={{ full_url | cgi_escape }}&text={{ page.title | cgi_escape }}">X</a>
+      <a class="share-btn" target="_blank" rel="noopener" href="https://bsky.app/intent/compose?text={{ page.title | append: ' ' | append: full_url | cgi_escape }}">Bluesky</a>
+      <a class="share-btn" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url={{ full_url | cgi_escape }}">LinkedIn</a>
+      <a class="share-btn" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u={{ full_url | cgi_escape }}">Facebook</a>
+    </div>
+
+    <section class="comments">
+      <h2 class="comments-head">{% if page.lang == 'fr' %}Commentaires &amp; réactions{% else %}Comments &amp; reactions{% endif %}</h2>
+      <script src="https://giscus.app/client.js"
+              data-repo="carlrippon/carlrippon.github.io"
+              data-repo-id="R_kgDOTEWosA"
+              data-category="Announcements"
+              data-category-id="DIC_kwDOTEWosM4C_5HQ"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="light"
+              data-lang="{% if page.lang == 'fr' %}fr{% else %}en{% endif %}"
+              data-loading="lazy"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </section>
+
+    <a class="backlink" href="/blog/">← {% if page.lang == 'fr' %}Toutes les notes{% else %}All notes{% endif %}</a>
   </div>
 </article>
