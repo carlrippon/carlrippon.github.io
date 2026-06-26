@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Pourquoi l'économie des catastrophes devrait commencer par la Caraïbe"
-date: 2026-06-25
+date: 2026-06-29
 lang: fr
 translation: /blog/why-disaster-economics-should-start-in-the-caribbean/
 categories: [recherche, economie-des-catastrophes]
