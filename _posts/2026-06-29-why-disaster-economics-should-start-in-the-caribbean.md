@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Why the economics of disasters should start in the Caribbean"
-date: 2026-06-29
+date: 2026-06-26
 lang: en
 translation: /blog/caraibe-point-de-depart-economie-catastrophes/
 categories: [research, economics-of-disasters]
