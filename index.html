@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carl Rippon — Economist</title>
 <meta name="description" content="Carl Rippon, PhD candidate in economics at the University of Antilles (CREDDI). The economics of disasters in small, open island economies of the Caribbean.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Carl Rippon">
+<meta property="og:description" content="The economics of disasters in small, open island economies of the Caribbean.">
+<meta property="og:image" content="https://carlrippon.github.io/assets/images/social-card.png">
+<meta property="og:url" content="https://carlrippon.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Carl Rippon">
+<meta name="twitter:description" content="The economics of disasters in small, open island economies of the Caribbean.">
+<meta name="twitter:image" content="https://carlrippon.github.io/assets/images/social-card.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -109,6 +118,9 @@
   .sec-head{font-family:var(--display);font-weight:500;font-size:clamp(1.5rem,2.6vw,2.1rem);
     letter-spacing:-.015em;margin:.2rem 0 1.8rem;}
   .about-body{max-width:62ch;}
+  .about-grid{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;}
+  .about-photo{width:200px;height:200px;object-fit:cover;border-radius:14px;display:block;}
+  @media (max-width:720px){.about-grid{grid-template-columns:1fr;gap:24px;}.about-photo{width:150px;height:150px;}}
   .about-body p{margin:0 0 1.15rem;font-size:1.12rem;}
   .about-body p:last-child{margin-bottom:0;}
   .about-body strong{font-weight:600;}
@@ -245,10 +257,13 @@
     <div class="wrap">
       <p class="eyebrow">About</p>
       <h2 class="sec-head">A simple question, asked of islands.</h2>
-      <div class="about-body">
-        <p>I'm a PhD candidate in economics at the <strong>University of Antilles</strong>, in the CREDDI research center. My work is on the economics of disasters in small, open, climate-exposed island economies, with a focus on the Caribbean.</p>
-        <p>It starts from a question that sounds simple and turns out not to be: why do similar shocks send comparable economies onto such different paths? To answer it, I combine structural macroeconomic modeling with applied empirical work, using DSGE models, local projections, and climate and satellite data.</p>
-        <p>I also care about what the results mean in practice: where reconstruction effort pays off, how price-regulation schemes are designed, and how islands can share the risk of shocks that, in a single event, can exceed a full year of output.</p>
+      <div class="about-grid">
+        <img class="about-photo" src="/assets/images/carl-rippon.jpg" alt="Carl Rippon" width="200" height="200">
+        <div class="about-body">
+          <p>I'm a PhD candidate in economics at the <strong>University of Antilles</strong>, in the CREDDI research center. My work is on the economics of disasters in small, open, climate-exposed island economies, with a focus on the Caribbean.</p>
+          <p>It starts from a question that sounds simple and turns out not to be: why do similar shocks send comparable economies onto such different paths? To answer it, I combine structural macroeconomic modeling with applied empirical work, using DSGE models, local projections, and climate and satellite data.</p>
+          <p>I also care about what the results mean in practice: where reconstruction effort pays off, how price-regulation schemes are designed, and how islands can share the risk of shocks that, in a single event, can exceed a full year of output.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -277,7 +292,7 @@
 
         <article class="paper">
           <div class="meta">
-            Working paper
+            CREDDI<br>Working paper
             <span class="tag">DSGE</span>
           </div>
           <div>
