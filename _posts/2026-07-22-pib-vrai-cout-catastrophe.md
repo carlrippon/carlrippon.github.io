@@ -27,7 +27,7 @@ Le premier angle mort, c'est donc le capital détruit lui-même. La richesse qui
 
 Le deuxième, ce sont les pertes intangibles : les traumatismes, la scolarité interrompue, l'érosion des liens sociaux et communautaires, la dégradation de l'environnement. Rien de tout cela ne se range dans une case des comptes nationaux, et pourtant c'est souvent ce qui pèse le plus lourd dans une vie.
 
-Mais l'angle mort le plus profond est ailleurs. Le PIB est un agrégat : il additionne. Il traite donc de la même façon un euro perdu par une famille au bord de la subsistance et un euro perdu par un ménage aisé. Or ces deux euros ne se valent pas. C'est tout l'enjeu du basculement vers une autre mesure.
+Mais le plus grave est ailleurs. Le PIB est un agrégat : il additionne. Il traite donc de la même façon un euro perdu par une famille au bord de la subsistance et un euro perdu par un ménage aisé. Or ces deux euros ne se valent pas. C'est tout l'enjeu du basculement vers une autre mesure.
 
 ## Mesurer ce qui compte vraiment : le bien-être
 
@@ -49,7 +49,7 @@ Conjugués, ces facteurs transforment une catastrophe en mécanisme d'aggravatio
 
 ## Changer d'instrument, changer de politique
 
-Tout cela n'est pas qu'une querelle de mesure. Si l'on évalue une catastrophe au seul PIB, on se trompe sur le coût, mais aussi sur le remède. Mesuré en bien-être, le coût d'une catastrophe désigne d'autres leviers : non pas seulement la prévention en amont du choc, mais la capacité à l'absorber en aval, c'est-à-dire la protection sociale, l'inclusion financière, la diversification des revenus. Ce sont des politiques qui ne réduisent pas l'aléa, mais qui changent radicalement ce qu'il coûte aux plus vulnérables.
+Tout cela ne relève pas d'un simple débat de méthode. Si l'on évalue une catastrophe au seul PIB, on se trompe sur le coût, mais aussi sur le remède. Mesuré en bien-être, le coût d'une catastrophe désigne d'autres leviers : non pas seulement la prévention en amont du choc, mais la capacité à l'absorber en aval, c'est-à-dire la protection sociale, l'inclusion financière, la diversification des revenus. Ce sont des politiques qui ne réduisent pas l'aléa, mais qui changent radicalement ce qu'il coûte aux plus vulnérables.
 
 Et cela transforme une question que l'on croyait simple : si le coût est à ce point mal mesuré, que veut dire au juste « revenir à la normale » ? C'est précisément ce que j'examinerai dans le prochain billet, en montrant pourquoi la promesse d'une reprise intégrale après une catastrophe relève largement du mythe.
 
