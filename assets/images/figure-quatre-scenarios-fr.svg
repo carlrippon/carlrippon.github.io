@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Quatre scénarios à long terme de l'impact d'une catastrophe sur le PIB par habitant.
+  D'après la typologie de Hsiang & Jina (2014). Figure originale redessinée (aucune reproduction).
+
+  Alignée sur la charte : IBM Plex Mono pour les libellés, pointillés pour la référence
+  et le choc (comme la courbe IRF du site), corail réservé au scénario central.
+
+  MODE SOMBRE : géré de deux façons.
+   - inséré en ligne dans la page  -> règle [data-theme="dark"] .fig4
+   - appelé via <img src="...">    -> media query prefers-color-scheme
+  POUR RECOLORER : modifie les variables des blocs ci-dessous.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" class="fig4" viewBox="0 0 760 460" width="760" height="460" role="img" aria-labelledby="titre desc">
+  <title id="titre">Quatre scénarios à long terme de l'impact d'une catastrophe sur le PIB par habitant</title>
+  <desc id="desc">Après la catastrophe, la destruction créatrice monte aussitôt et finit la plus haute ; le build back better plonge puis repasse au-dessus de la tendance de référence ; le retour à la tendance plonge puis rejoint la droite de référence ; le scénario sans reprise plonge et reste durablement bas.</desc>
+
+  <style>
+    /* ---- mode clair (défaut) ---- */
+    .fig4 {
+      --axis:     #D2DAD8;
+      --baseline: #33514F;
+      --shock:    #6C7E7C;
+      --label:    #6C7E7C;
+      --cd:  #2E7D86;  /* destruction créatrice */
+      --bbb: #33514F;  /* build back better */
+      --rtt: #6C7E7C;  /* retour à la tendance */
+      --nr:  #D2563A;  /* pas de reprise (scénario central) */
+    }
+    /* ---- mode sombre, figure insérée en ligne dans la page ---- */
+    [data-theme="dark"] .fig4 {
+      --axis:     #3A5654;
+      --baseline: #8FA6A4;
+      --shock:    #80938F;
+      --label:    #9FB0AE;
+      --cd:  #7FB6BC;
+      --bbb: #9FB0AE;
+      --rtt: #C8D4D2;
+      --nr:  #E0694C;
+    }
+    /* ---- mode sombre, figure appelee en img autonome ---- */
+    @media (prefers-color-scheme: dark) {
+      :root.fig4 {
+        --axis:     #3A5654;
+        --baseline: #8FA6A4;
+        --shock:    #80938F;
+        --label:    #9FB0AE;
+        --cd:  #7FB6BC;
+        --bbb: #9FB0AE;
+        --rtt: #C8D4D2;
+        --nr:  #E0694C;
+      }
+    }
+
+    .fig4 text { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .fig4 .axis     { stroke: var(--axis); stroke-width: 1.4; fill: none; }
+    .fig4 .baseline { stroke: var(--baseline); stroke-width: 1.8; fill: none;
+                      stroke-dasharray: 5 6; opacity: .75; }
+    .fig4 .shockline{ stroke: var(--shock); stroke-width: 1.4; fill: none;
+                      stroke-dasharray: 2 6; opacity: .8; }
+    .fig4 .curve    { fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .fig4 .cd  { stroke: var(--cd); }
+    .fig4 .bbb { stroke: var(--bbb); }
+    .fig4 .rtt { stroke: var(--rtt); }
+    .fig4 .nr  { stroke: var(--nr); stroke-width: 3.2; }
+    .fig4 .lbl-s    { font-size: 12px; font-weight: 500; }
+    .fig4 .t-cd  { fill: var(--cd); }
+    .fig4 .t-bbb { fill: var(--bbb); }
+    .fig4 .t-rtt { fill: var(--rtt); }
+    .fig4 .t-nr  { fill: var(--nr); }
+    .fig4 .lbl-base  { font-size: 11px; fill: var(--label); }
+    .fig4 .lbl-shock { font-size: 11px; fill: var(--label); letter-spacing: .12em; }
+    .fig4 .axis-title{ font-size: 12px; fill: var(--label); }
+    .fig4 .dot-halo  { fill: none; stroke: var(--shock); stroke-width: 1.6; opacity: .45; }
+    .fig4 .dot       { fill: var(--shock); }
+  </style>
+
+  <!-- Repère du choc -->
+  <line class="shockline" x1="191" y1="62" x2="191" y2="400"/>
+  <text class="lbl-shock" x="191" y="52" text-anchor="middle">CATASTROPHE</text>
+
+  <!-- Axes -->
+  <line class="axis" x1="70" y1="400" x2="70" y2="60"/>
+  <line class="axis" x1="70" y1="400" x2="600" y2="400"/>
+  <text class="axis-title" x="26" y="230" text-anchor="middle" transform="rotate(-90 26 230)">PIB par habitant</text>
+  <text class="axis-title" x="335" y="430" text-anchor="middle">temps →</text>
+
+  <!-- Droite de référence (trajectoire d'avant, prolongée) -->
+  <path class="baseline" d="M72,352 L515,217"/>
+  <text class="lbl-base" x="168" y="298" text-anchor="end">tendance de</text>
+  <text class="lbl-base" x="168" y="312" text-anchor="end">référence</text>
+
+  <!-- Les quatre trajectoires (branchement au point (191,316) sur la droite) -->
+  <path class="curve cd"  d="M191,316 C235,305 255,235 305,205 C370,170 470,118 550,95"/>
+  <path class="curve bbb" d="M191,316 C206,330 224,336 242,335 C310,333 380,235 550,172"/>
+  <path class="curve rtt" d="M191,316 C208,336 229,346 249,345 C330,344 430,250 515,217"/>
+  <path class="curve nr"  d="M191,316 C210,338 232,351 254,351 C330,352 430,320 550,305"/>
+
+  <!-- Point de bascule -->
+  <circle class="dot-halo" cx="191" cy="316" r="10"/>
+  <circle class="dot" cx="191" cy="316" r="4.2"/>
+
+  <!-- Étiquettes -->
+  <text class="lbl-s t-cd"  x="558" y="99">Destruction créatrice</text>
+  <text class="lbl-s t-bbb" x="558" y="176">Build back better</text>
+  <text class="lbl-s t-rtt" x="558" y="221">Retour à la tendance</text>
+  <text class="lbl-s t-nr"  x="558" y="309">Pas de reprise</text>
+</svg>
