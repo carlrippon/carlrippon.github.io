@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,7 +121,7 @@
     margin:.2rem 0 1.4rem;
   }
   .hero h1 em{font-style:italic;color:var(--accent);}
-  .lede{font-size:clamp(1.05rem,1.7vw,1.3rem);color:var(--text-2);max-width:30ch;margin:0 0 2rem;}
+  .lede{font-size:clamp(1.05rem,1.7vw,1.3rem);color:var(--text-2);max-width:40ch;margin:0 0 2rem;}
   .status{font-family:var(--mono);font-size:.78rem;color:var(--text-muted);letter-spacing:.03em;
     border-top:1px solid var(--border);padding-top:1rem;max-width:34ch;}
 
@@ -250,9 +252,9 @@
   <section class="hero" style="border-top:none;">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">Economics of disasters</p>
+        <p class="eyebrow">Macroeconomics of climate risk</p>
         <h1>Reading the shock, and the <em>recovery</em>.</h1>
-        <p class="lede">I study how disasters move through small, open island economies in the Caribbean, and what helps them recover.</p>
+        <p class="lede">I study how climate shocks move through small, open economies, through their public finances, their debt and their cost of capital, and what helps them recover. Few places show it more clearly than the Caribbean.</p>
         <p class="status">PhD candidate · University of Antilles, CREDDI · defending 2026</p>
       </div>
       <div class="hero-art">
@@ -287,9 +289,9 @@
       <div class="about-grid">
         <img class="about-photo" src="/assets/images/carl-rippon.jpg" alt="Carl Rippon" width="200" height="200">
         <div class="about-body">
-          <p>I'm a PhD candidate in economics at the <strong>University of Antilles</strong>, in the CREDDI research center. My work is on the economics of disasters in small, open, climate-exposed island economies, with a focus on the Caribbean.</p>
-          <p>It starts from a question that sounds simple and turns out not to be: why do similar shocks send comparable economies onto such different paths? To answer it, I combine structural macroeconomic modeling with applied empirical work, using DSGE models, local projections, and climate and satellite data.</p>
-          <p>I also care about what the results mean in practice: where reconstruction effort pays off, how price-regulation schemes are designed, and how islands can share the risk of shocks that, in a single event, can exceed a full year of output.</p>
+          <p>I'm a PhD candidate in economics at the <strong>University of Antilles</strong>, in the CREDDI research center, defending in 2026. I work on the macroeconomics of climate risk: how the large physical shocks that hit an economy turn into financial and fiscal ones. I focus on small, open Caribbean economies, because they are struck often and hard, and because what happens there is unusually clear to see.</p>
+          <p>A hurricane does not stay physical. It raises the cost of borrowing abroad, strains public budgets and sovereign debt, and reshapes what households and governments decide to spend, tax and insure. I study these channels with structural macroeconomic models and applied empirical work, from how a single shock transmits across very different islands, to what fast disaster insurance is really worth to a government, to how global disruptions and local taxes pass through to the price of everyday goods.</p>
+          <p>I care about what the results mean in practice: where reconstruction effort pays off, how price and insurance schemes are designed, and how the cost of a shock can be shared rather than borne alone. And I try to explain all of it plainly, because the people it concerns most, in the Caribbean and beyond, should not need a doctorate to follow the argument. The work speaks both to macroeconomists and to the institutions that finance and insure climate risk.</p>
         </div>
       </div>
     </div>
@@ -340,7 +342,7 @@
             <h3>Beyond the Shock: What Follows When Disaster Strikes?</h3>
             <p>An integrative review of how disasters reshape households, sectors and states, mapping a fragmented literature into a single framework and setting out six research priorities.</p>
             <div class="links">
-              <a href="#" aria-disabled="true"></a>
+              <a href="#" aria-disabled="true">Draft on request</a>
             </div>
           </div>
         </article>
@@ -356,15 +358,17 @@
       <h2 class="sec-head">Notes.</h2>
       <p class="writing-note">Short pieces where I try to explain the ideas in my research in plain language. A few selected below; the full list is in the blog.</p>
 
-      <!-- Billets à la une, choisis à la main. Pour en mettre un en avant, copie un bloc <a>
-           et fais pointer href vers l'adresse du billet (ex. /blog/titre-du-billet/). -->
-      <a class="note note-link" href="/blog/why-disaster-economics-should-start-in-the-caribbean/">
-        <div class="date">Jun 29, 2026</div>
+      <!-- Billet à la une : automatiquement le dernier billet publié en anglais. -->
+      {% assign latest_en = site.posts | where: "lang", "en" | first %}
+      {% if latest_en %}
+      <a class="note note-link" href="{{ latest_en.url }}">
+        <div class="date">{{ latest_en.date | date: "%b %-d, %Y" }}</div>
         <div>
-          <h3>Why the economics of disasters should start in the Caribbean</h3>
-          <p>We're told economies bounce back after a disaster, and that a small island is too special a case to teach us anything general. What if that weren't entirely true?</p>
+          <h3>{{ latest_en.title }}</h3>
+          <p>{{ latest_en.excerpt | strip_html | truncate: 190 }}</p>
         </div>
       </a>
+      {% endif %}
 
       <a class="btn" href="/blog/" style="margin-top:1.6rem;"><span>→</span> Read all notes</a>
     </div>
