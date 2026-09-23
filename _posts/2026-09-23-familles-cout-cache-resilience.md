@@ -6,10 +6,10 @@ lang: fr
 translation: /blog/what-families-lose-holding-on/
 categories: [recherche, economie-des-catastrophes]
 tags: [ménages, résilience, pauvreté, solidarité, diaspora, Caraïbe]
-excerpt: "On célèbre la résilience des familles après un ouragan. Mais derrière ce mot se cache une série de renoncements de plus en plus coûteux."
+excerpt: "On célèbre la résilience des familles après un ouragan. Mais derrière ce mot se cache une série de sacrifices de plus en plus coûteux."
 ---
 
-*On célèbre volontiers la résilience des familles après un ouragan. Mais derrière ce mot se cache une suite de renoncements, chacun plus coûteux que le précédent.*
+*On célèbre volontiers la résilience des familles après un ouragan. Mais derrière ce mot se cache une suite de sacrifices, chacun plus coûteux que le précédent.*
 
 Les billets précédents portaient sur l'économie dans son ensemble : les trajectoires de croissance, la mesure du coût, les scénarios de reprise. Celui-ci change d'échelle et s'intéresse aux ménages. Dans les semaines qui suivent un ouragan, une famille touchée doit faire des choix : puiser dans l'épargne, emprunter, solliciter un proche, vendre un outil de travail, parfois retirer un enfant de l'école. Ces choix ont un coût, souvent invisible, et ils expliquent en partie pourquoi les pertes d'une catastrophe durent bien au-delà de l'événement.
 
@@ -29,7 +29,7 @@ Aux Philippines, Dean Yang et Hwa Jin Choi (2007) ont montré que les proches in
 
 Deux nuances s'imposent toutefois. D'abord, cette protection ne joue que pour les ménages qui ont effectivement un proche à l'étranger, ce qui crée une inégalité de plus entre les familles selon qu'un des leurs est parti ou non. Ensuite, même à 60 %, la compensation reste partielle. Le trou n'est pas comblé, il est réduit.
 
-## La hiérarchie des renoncements
+## La hiérarchie des sacrifices
 
 Que se passe-t-il quand ni l'entraide ni les proches à l'étranger ne suffisent ? Les ménages suivent alors un ordre assez régulier, observé dans de nombreux pays.
 
@@ -75,7 +75,7 @@ Le second concerne les transferts monétaires. Patrick Premand et Quentin Stoeff
 
 ## La résilience n'est pas une vertu, c'est une infrastructure
 
-Nous employons souvent le mot résilience comme un compliment, pour saluer le courage de ceux qui encaissent. Ce billet dit l'inverse : ce que nous prenons pour du courage est le plus souvent une suite de renoncements coûteux, et l'admiration que nous exprimons dispense parfois de regarder ce qu'ils coûtent.
+Nous employons souvent le mot résilience comme un compliment, pour saluer le courage de ceux qui encaissent. Ce billet dit l'inverse : ce que nous prenons pour du courage est le plus souvent une suite de sacrifices, et l'admiration que nous exprimons dispense parfois de regarder ce qu'ils coûtent.
 
 La véritable résilience ne se mesure pas au courage des familles, mais à ce dont elles disposent au moment du choc : une épargne, une assurance qui indemnise rapidement, un filet social déjà en place, un accès au crédit qui ne se referme pas. Encore faut-il que ces dispositifs atteignent ceux qui en ont le plus besoin, ce qui est loin d'être acquis. Hallegatte et ses coauteurs (2017) relèvent qu'au Népal, après les inondations et glissements de terrain de 2011, à peine 6 % des ménages très pauvres avaient sollicité un soutien public, contre près de 90 % des ménages aisés.
 
