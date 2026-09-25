@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://carlrippon.github.io/assets/images/social-card-en.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..600,0..100,0..1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#102A30;
@@ -63,11 +63,10 @@
   /* ---------- mono eyebrow ---------- */
   .eyebrow{
     font-family:var(--mono);
-    font-size:.72rem;
-    letter-spacing:.18em;
-    text-transform:uppercase;
+    font-size:.8rem;
+    letter-spacing:.02em;
     color:var(--text-muted);
-    margin:0 0 1.1rem;
+    margin:0 0 1rem;
     display:flex;align-items:center;gap:.7rem;
   }
   .eyebrow::before{
@@ -115,13 +114,16 @@
   .hero h1{
     font-family:var(--display);
     font-weight:500;
-    font-size:clamp(2.7rem,6.4vw,5rem);
-    line-height:1.02;
-    letter-spacing:-.025em;
-    margin:.2rem 0 1.4rem;
+    font-size:clamp(2.3rem,4.2vw,3.3rem);
+    line-height:1.08;
+    letter-spacing:-.01em;
+    margin:0 0 .5rem;
+    font-variation-settings:"opsz" 48,"SOFT" 0,"WONK" 0;
   }
-  .hero h1 em{font-style:italic;color:var(--accent);}
-  .lede{font-size:clamp(1.05rem,1.7vw,1.3rem);color:var(--text-2);max-width:40ch;margin:0 0 2rem;}
+  .hero .role{font-size:1.05rem;color:var(--text-2);margin:0 0 1.6rem;}
+  .hero .figcap{font-family:var(--mono);font-size:.74rem;color:var(--text-muted);margin:.6rem 0 0 8%;}
+  h2,h3,.brand{font-variation-settings:"SOFT" 0,"WONK" 0;}
+  .lede{font-size:clamp(1.05rem,1.7vw,1.3rem);color:var(--text-2);max-width:40ch;margin:0;}
   .status{font-family:var(--mono);font-size:.78rem;color:var(--text-muted);letter-spacing:.03em;
     border-top:1px solid var(--border);padding-top:1rem;max-width:34ch;}
 
@@ -191,7 +193,7 @@
   /* contact */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
   .contact-grid p{margin:0 0 .5rem;}
-  .contact-grid .label{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin:0 0 .6rem;}
+  .contact-grid .label{font-family:var(--mono);font-size:.8rem;letter-spacing:.02em;color:var(--text-muted);margin:0 0 .6rem;}
   .contact-grid a{color:var(--link);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s;}
   .contact-grid a:hover,.contact-grid a:focus-visible{border-color:var(--link);}
   .biglink{font-family:var(--display);font-size:1.4rem;font-weight:500;}
@@ -253,9 +255,9 @@
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow">Macroeconomics of climate risk</p>
-        <h1>Reading the shock, and the <em>recovery</em>.</h1>
+        <h1>Carl Rippon</h1>
+        <p class="role">PhD candidate in economics, University of Antilles (CREDDI) · defending 2026</p>
         <p class="lede">I study how climate shocks move through small open economies, through their public finances, their debt and their cost of capital, and what helps them recover. Few places show it more clearly than the Caribbean.</p>
-        <p class="status">PhD candidate · University of Antilles, CREDDI · defending 2026</p>
       </div>
       <div class="hero-art">
         <svg class="irf" viewBox="0 0 600 320" role="img" aria-label="An impulse response curve: output drops sharply on impact, then recovers slowly toward, but not fully back to, its baseline.">
@@ -277,6 +279,7 @@
           <text class="reveal" x="566" y="298" text-anchor="end">time →</text>
           <text class="reveal" x="455" y="142">persistent gap</text>
         </svg>
+        <p class="figcap">Reading the shock, and the recovery.</p>
       </div>
     </div>
   </section>
